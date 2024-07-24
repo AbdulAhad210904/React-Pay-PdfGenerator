@@ -420,14 +420,20 @@ const PayslipPDF = ({ data }) => (
           </View>
         </View>
       </View>
-      {/* Add a text that this is system generated pdf which doesnot need any signature and stamp */}
+      {/* Note Display */}
+      {data.note && (
+        <View style={[{paddingLeft:20}]}>
+          <Text style={[styles.title,{fontSize:12}]}>Note: 
+            <Text> </Text>
+          <Text style={[styles.grayText,{fontSize:12}]}>{data.note}</Text>
+          </Text>
+        </View>
+      )}
+      {/* Sysytem Generated Slip Indication */}
       <View style={[{padding:20}]}>
-        <Text style={[styles.title,{fontSize:14}]}>Note: 
         <Text style={[styles.grayText,{fontSize:12}]}>
           This is a system generated pay slip and does not require any signature or stamp.
-        </Text>
-        </Text>
-        
+        </Text>        
       </View>
       {/* Footer Design */}
       <View style={styles.footerDesign}>

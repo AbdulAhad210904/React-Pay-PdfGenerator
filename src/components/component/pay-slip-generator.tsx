@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -25,6 +25,7 @@ export function PaySlipGenerator() {
         earnings: [{ description: "", amount: "" }],
         deductions: [{ description: "", amount: "" }],
       },
+      note: "", // Added an additional note field
     },
   });
 
@@ -315,6 +316,21 @@ export function PaySlipGenerator() {
           <p className="text-sm text-muted-foreground">
             Amount in words: Rupees {amountInWords}
           </p>
+        </div>
+
+        <div className="space-y-4 mb-6">
+          <Label htmlFor="note">Note (Optional)</Label>
+          <Controller
+            control={control}
+            name="note"
+            render={({ field }) => (
+              <Input
+                id="note"
+                {...field}
+                placeholder="Enter any additional note"
+              />
+            )}
+          />
         </div>
 
         <div className="flex space-x-4">

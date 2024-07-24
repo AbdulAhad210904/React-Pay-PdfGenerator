@@ -265,7 +265,6 @@ const PayslipPDF = ({ data }) => (
           <Polygon points="0 0, 135% 0, 80% 100%, 0% 100%" fill="#ADD8E6" />
         </Svg>
       </View>
-
       <View style={styles.page}>
         {/* Header Section */}
         <View style={styles.header}>

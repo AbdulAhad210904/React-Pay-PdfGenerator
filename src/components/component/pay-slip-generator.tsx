@@ -25,7 +25,7 @@ export function PaySlipGenerator() {
         earnings: [{ description: "", amount: "" }],
         deductions: [{ description: "", amount: "" }],
       },
-      note: "", // Added an additional note field
+      note: "", // additional note field
     },
   });
 
